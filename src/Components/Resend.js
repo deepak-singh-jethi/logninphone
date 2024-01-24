@@ -43,7 +43,7 @@ const Resend = ({ setOtp, length }) => {
       <a href="#" style={{ pointerEvents: pointerEvent }} onClick={handleClick}>
         Resend
       </a>{" "}
-      code in {time}
+      OTP in {time}
       {" Sec"}
     </div>
   );
