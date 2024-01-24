@@ -36,7 +36,7 @@ const Resend = ({ setOtp, length }) => {
       clearInterval(intervalRef.current);
       // Clear the interval when the component changed
     };
-  }, []); // Run this effect once at the loading
+  }, []);
 
   return (
     <div>
