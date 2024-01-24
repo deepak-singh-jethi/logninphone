@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+background: linear-gradient(to bottom, #93f2f4, #71bceb);
+width: 100%;
+height: 100%;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+#root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+}
+.App{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0px 0px 7px rgb(181, 179, 179);
+    width: 450px;
+    height: 600px;
+    gap: 35px;
+    border-radius: 15px;
+    padding-top: 25px;
+    background-color: #fff;
+
+
+}
+.App img{
+   height: 190px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+#phoneForm input{
+    width: 300px;
+    height: 40px;
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    padding: 0px;
+    border-radius:3px;
+    border: 2px solid gray;
 }
 
-.App-link {
-  color: #61dafb;
+#phoneForm input:focus{
+    outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#phoneForm button{
+    padding: 10px 18px;
+    background-color: indigo;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    cursor: pointer;
+
+}
+
+#otpContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#otpContainer input{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 10px;
+}
+#otpContainer button{
+    padding: 10px 20px;
+    background-color: indigo;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+#changeNumberBtn{
+    width: 70%;
+    padding: 10px 20px;
+        background-color: indigo;
+        color: white;
+        border: none;
+        border-radius: 7px;
+        font-size: 1.2rem;
+}
+
+#errorMsg{
+    color: red;
+}
+a{
+    cursor: pointer;
+    color: indigo;
+}
+button{
+    cursor: pointer;
 }
