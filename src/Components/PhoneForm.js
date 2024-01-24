@@ -2,15 +2,11 @@ import React, { useState } from "react";
 import { imgUrl } from "../utility/data";
 
 const PhoneForm = ({ setGotPhone, phoneNumber, setPhoneNumber }) => {
-  //handle submit
-
   const [err, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(phoneNumber);
 
-    //regex to validate phone number
     const regex = /^[0-9]{10}$/;
     if (regex.test(phoneNumber)) {
       setGotPhone(true);

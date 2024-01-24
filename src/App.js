@@ -6,7 +6,6 @@ import OtpPage from "./Components/OtpPage";
 function App() {
   const [gotPhone, setGotPhone] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
-  console.log(gotPhone);
 
   const handleOTPSubmit = (otp) => {
     console.log("login");

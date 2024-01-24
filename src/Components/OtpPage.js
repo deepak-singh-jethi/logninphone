@@ -1,11 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import Timer from "./Timer";
+// OtpPage.js
+import React, { useEffect, useState, useRef } from "react";
+import Resend from "./Resend.js";
 
 const OtpPage = ({ length, handleOTPSubmit, setGotPhone }) => {
-  //useState for otp as an array of 4 length will "" value
   const [otp, setOtp] = useState(new Array(length).fill(""));
-  const [resendActive, setResendActive] = useState("none");
-
   const inputRef = useRef([]);
 
   useEffect(() => {
@@ -16,6 +14,14 @@ const OtpPage = ({ length, handleOTPSubmit, setGotPhone }) => {
 
   const handleChange = (index, e) => {
     const value = e.target.value;
+
+    //check if value is a number
+
+    if (isNaN(value)) {
+      return;
+    }
+    // if number then only run below code
+
     const newOtp = [...otp];
     newOtp[index] = value.substring(value.length - 1);
     setOtp(newOtp);
@@ -51,7 +57,6 @@ const OtpPage = ({ length, handleOTPSubmit, setGotPhone }) => {
 
   const handleChangeNumber = () => {
     setGotPhone(false);
-    setResendActive("none");
   };
 
   return (
@@ -81,27 +86,19 @@ const OtpPage = ({ length, handleOTPSubmit, setGotPhone }) => {
                 onKeyDown={(e) => {
                   handleKeyDown(index, e);
                 }}
-                className="otpIntput"
+                className="otpInput"
               />
             );
           })}
         </div>
-
         <button type="submit">Submit</button>
       </form>
-
-      <p>
-        <a href="#" style={{ pointerEvents: resendActive }}>
-          Resend
-        </a>
-        {`  OTP in`}{" "}
-        {<Timer setResendActive={setResendActive} seconds={20}></Timer>}
-      </p>
-
+      <Resend setOtp={setOtp} length={length}></Resend>
       <button onClick={handleChangeNumber} id="changeNumberBtn">
         Change Number
       </button>
     </>
   );
 };
+
 export default OtpPage;
